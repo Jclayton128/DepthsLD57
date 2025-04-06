@@ -56,7 +56,7 @@ public class TilesController : MonoBehaviour
         int runningValue = 0;
         foreach (var tile in _tiles)
         {
-            if (tile.Row == row)
+            if (tile.Row == row && tile.TileValue >= 0)
             {
                 runningValue += tile.TileValue;
             }
@@ -69,7 +69,7 @@ public class TilesController : MonoBehaviour
         int runningValue = 0;
         foreach (var tile in _tiles)
         {
-            if (tile.Col == col)
+            if (tile.Col == col && tile.TileValue >= 0)
             {
                 runningValue += tile.TileValue;
             }
@@ -83,7 +83,7 @@ public class TilesController : MonoBehaviour
         return new Vector2Int(rand, _mapSize - 1);
     }
 
-    public bool CheckMoveInto(int destinationRow, int destinationCol)
+    public bool CheckIfPositionIsValid(int destinationRow, int destinationCol)
     {
         bool isValid = true;
 
@@ -94,5 +94,50 @@ public class TilesController : MonoBehaviour
         }
 
         return isValid;
+    }
+
+    public void ProcessMove(int row, int col)
+    {
+        TileHandler targetTile = null;
+        foreach (var tile in _tiles)
+        {
+            if (tile.Row == row && tile.Col == col)
+            {
+                targetTile = tile;
+                break;
+            }
+        }
+
+        if (targetTile != null)
+        {
+            targetTile.ExcavateTile();
+
+            //reveal adjacent values
+
+            if (CheckIfPositionIsValid(row+1, col)) GetTileHandlerAtPosition(row + 1, col).ShowValue();
+            if (CheckIfPositionIsValid(row-1, col)) GetTileHandlerAtPosition(row - 1, col).ShowValue();
+            if (CheckIfPositionIsValid(row, col+1)) GetTileHandlerAtPosition(row, col + 1).ShowValue();
+            if (CheckIfPositionIsValid(row, col-1)) GetTileHandlerAtPosition(row, col - 1).ShowValue();
+            ValuesChanged?.Invoke();
+
+
+        }
+        else
+        {
+            Debug.LogWarning("Target Tile not found!");
+        }
+    }
+
+    private TileHandler GetTileHandlerAtPosition(int row, int col)
+    {
+        foreach (var tile in _tiles)
+        {
+            if (tile.Row == row && tile.Col == col)
+            {
+                return tile;
+            }
+        }
+        Debug.LogWarning("no tile handler found at position");
+        return null;
     }
 }

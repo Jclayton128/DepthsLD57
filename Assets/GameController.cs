@@ -26,11 +26,13 @@ public class GameController : MonoBehaviour
     {
         if (_player) Destroy(_player);
 
+        //Instantly excavate the place where player started
+        TilesController.Instance.PushNewRandomTileValues();
+
         Vector2 startPos = TilesController.Instance.GetRandomStartPos();
         _player = Instantiate(_playerPrefab, startPos, Quaternion.identity);
 
-        //Instantly excavate the place where player started
-        TilesController.Instance.PushNewRandomTileValues();
+
 
     }
 

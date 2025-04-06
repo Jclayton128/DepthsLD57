@@ -12,6 +12,7 @@ public class MovementHandler : MonoBehaviour
     {
         _col = Mathf.RoundToInt(transform.position.x);
         _row = Mathf.RoundToInt(transform.position.y);
+        TilesController.Instance.ProcessMove(_row, _col);
     }
 
     // Update is called once per frame
@@ -19,34 +20,46 @@ public class MovementHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (TilesController.Instance.CheckMoveInto(_col, _row - 1))
+            if (TilesController.Instance.CheckIfPositionIsValid(_col, _row - 1))
             {
                 transform.position = new Vector2(_col, _row - 1);
+                _col = Mathf.RoundToInt(transform.position.x);
+                _row = Mathf.RoundToInt(transform.position.y);
+                TilesController.Instance.ProcessMove(_row, _col);
             }
+
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (TilesController.Instance.CheckMoveInto(_col, _row + 1))
+            if (TilesController.Instance.CheckIfPositionIsValid(_col, _row + 1))
             {
                 transform.position = new Vector2(_col, _row + 1);
+                _col = Mathf.RoundToInt(transform.position.x);
+                _row = Mathf.RoundToInt(transform.position.y);
+                TilesController.Instance.ProcessMove(_row, _col);
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (TilesController.Instance.CheckMoveInto(_col - 1, _row))
+            if (TilesController.Instance.CheckIfPositionIsValid(_col - 1, _row))
             {
                 transform.position = new Vector2(_col - 1, _row);
+                _col = Mathf.RoundToInt(transform.position.x);
+                _row = Mathf.RoundToInt(transform.position.y);
+                TilesController.Instance.ProcessMove(_row, _col);
             }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (TilesController.Instance.CheckMoveInto(_col +1 , _row))
+            if (TilesController.Instance.CheckIfPositionIsValid(_col +1 , _row))
             {
                 transform.position = new Vector2(_col + 1, _row);
+                _col = Mathf.RoundToInt(transform.position.x);
+                _row = Mathf.RoundToInt(transform.position.y);
+                TilesController.Instance.ProcessMove(_row, _col);
             }
         }
 
-        _col = Mathf.RoundToInt(transform.position.x);
-        _row = Mathf.RoundToInt(transform.position.y);
+
     }
 }

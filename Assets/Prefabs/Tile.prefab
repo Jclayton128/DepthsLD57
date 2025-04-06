@@ -131,6 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmp: {fileID: 16713619902895894}
+  _unexcavatedColor: {r: 1, g: 1, b: 1, a: 1}
+  _excavatedColor: {r: 0.216, g: 0.216, b: 0.216, a: 1}
+  Row: 0
+  Col: 0
 --- !u!1001 &5426193962804958362
 PrefabInstance:
   m_ObjectHideFlags: 0
