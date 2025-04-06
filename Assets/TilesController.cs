@@ -14,7 +14,10 @@ public class TilesController : MonoBehaviour
     [SerializeField] int _mapSize = 8;
     [SerializeField] int _minValue = 1;
     [SerializeField] int _maxValue = 9;
+    [SerializeField] int _collapseThreshold_base = 10;
 
+    //state
+    public int CollapseThreshold => _collapseThreshold_base + _maxValue;
 
     private void Awake()
     {
@@ -61,7 +64,19 @@ public class TilesController : MonoBehaviour
                 runningValue += tile.TileValue;
             }
         }
-        return runningValue;
+
+        if (runningValue < _collapseThreshold_base)
+        {
+            Debug.Log("Collapse!");
+            //TODO trigger loss
+            return 0;
+        }
+        else
+        {
+            return runningValue;
+        }
+
+
     }
 
     public int GetTotalInColumn(int col)
@@ -74,7 +89,17 @@ public class TilesController : MonoBehaviour
                 runningValue += tile.TileValue;
             }
         }
-        return runningValue;
+
+        if (runningValue < _collapseThreshold_base)
+        {
+            Debug.Log("Collapse!");
+            //TODO trigger loss
+            return 0;
+        }
+        else
+        {
+            return runningValue;
+        }
     }
 
     public Vector2Int GetRandomStartPos()
@@ -87,13 +112,12 @@ public class TilesController : MonoBehaviour
     {
         bool isValid = true;
 
-        if (destinationRow < 0 || destinationRow > _mapSize - 1 ||
+        if (destinationRow > _mapSize - 1 ||
             destinationCol < 0 || destinationCol > _mapSize - 1)
         {
             isValid = false;
         }
-
-        return isValid;
+            return isValid;
     }
 
     public void ProcessMove(int row, int col)
@@ -112,12 +136,10 @@ public class TilesController : MonoBehaviour
         {
             targetTile.ExcavateTile();
 
-            //reveal adjacent values
-
-            if (CheckIfPositionIsValid(row+1, col)) GetTileHandlerAtPosition(row + 1, col).ShowValue();
-            if (CheckIfPositionIsValid(row-1, col)) GetTileHandlerAtPosition(row - 1, col).ShowValue();
-            if (CheckIfPositionIsValid(row, col+1)) GetTileHandlerAtPosition(row, col + 1).ShowValue();
-            if (CheckIfPositionIsValid(row, col-1)) GetTileHandlerAtPosition(row, col - 1).ShowValue();
+            GetTileHandlerAtPosition(row - 1, col)?.ShowValue();
+            GetTileHandlerAtPosition(row + 1, col)?.ShowValue();
+            GetTileHandlerAtPosition(row, col + 1)?.ShowValue();
+            GetTileHandlerAtPosition(row, col - 1)?.ShowValue();
             ValuesChanged?.Invoke();
 
 

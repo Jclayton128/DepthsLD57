@@ -14,5 +14,10 @@ public class TotalizerDriver : MonoBehaviour
     {
         _valueTMP.text = value.ToString();
         //JUICE TODO show the value shaking or crumbling if very close to the losing threshold
+        if (value >= TilesController.Instance.CollapseThreshold)
+        {
+            _valueTMP.color = Color.white;
+        }
+        else _valueTMP.color = Color.red;
     }
 }

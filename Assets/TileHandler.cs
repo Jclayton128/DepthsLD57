@@ -18,10 +18,10 @@ public class TileHandler : MonoBehaviour
     public int Row;
     public int Col;
 
-    int _tilevalue;
+    [SerializeField] int _tilevalue;
     public int TileValue => _tilevalue;
-    bool _isValueRevealed;
-    bool _isExcavated;
+    [SerializeField] bool _isValueRevealed;
+    [SerializeField] bool _isExcavated;
 
     private void Awake()
     {
@@ -37,6 +37,7 @@ public class TileHandler : MonoBehaviour
 
     public void SetTileValue(int value)
     {
+        HideValue();
         _tilevalue = value;
         _tmp.text = _tilevalue.ToString();
         _isExcavated = false;

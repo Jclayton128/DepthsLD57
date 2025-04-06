@@ -20,7 +20,17 @@ public class MovementHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (TilesController.Instance.CheckIfPositionIsValid(_col, _row - 1))
+            if (_row - 1 < 0)
+            {
+                GameController.Instance.StartNextMine();
+
+                transform.position = new Vector2(_col,7);
+                _col = Mathf.RoundToInt(transform.position.x);
+                _row = Mathf.RoundToInt(transform.position.y);
+                TilesController.Instance.ProcessMove(_row, _col);
+            }
+
+            else if (TilesController.Instance.CheckIfPositionIsValid(_col, _row - 1))
             {
                 transform.position = new Vector2(_col, _row - 1);
                 _col = Mathf.RoundToInt(transform.position.x);
