@@ -20,5 +20,12 @@ public class DebugController : MonoBehaviour
             Debug.Log("hiding values");
             TilesController.Instance.HideAllValues();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("starting new run");
+            GameController.Instance.StartRun();
+        }
+
     }
 }

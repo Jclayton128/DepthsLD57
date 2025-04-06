@@ -22,8 +22,8 @@ public class TileHandler : MonoBehaviour
     private void Awake()
     {
         HideValue();
-        Col = Mathf.RoundToInt(transform.position.x - 0.5f);
-        Row = -1 * Mathf.RoundToInt(transform.position.y);
+        Col = Mathf.RoundToInt(transform.position.x);
+        Row = Mathf.RoundToInt(transform.position.y);
     }
 
 
