@@ -17,6 +17,7 @@ public class TileHandler : MonoBehaviour
     //settings
     [SerializeField] Color _unexcavatedColor = Color.white;
     [SerializeField] Color _excavatedColor = Color.grey;
+    [SerializeField] Color _framedColor = Color.yellow;
     [SerializeField] Sprite[] _hiddenSprites = null;
     [SerializeField] Sprite[] _emptySprites = null;
     [SerializeField] Sprite[] _sandSprites = null;
@@ -165,27 +166,58 @@ public class TileHandler : MonoBehaviour
     {
         if (_isExcavated) return;
         _isExcavated = true;
-        _tilevalue *= -1;
-        _tmp.color = _excavatedColor;
-   
-        ShowValue();
-        int rand = UnityEngine.Random.Range(0, _emptySprites.Length);
-        _srBody.sprite = _emptySprites[rand];
+
 
         if (_resource != ResourceType.None)
         {
             ExtractResource();
         }
 
+        GameController.Instance.SpendEnergy(_tilevalue);
 
+        _tilevalue *= -1;
+        _tmp.color = _excavatedColor;
+
+        ShowValue();
+        int rand = UnityEngine.Random.Range(0, _emptySprites.Length);
+        _srBody.sprite = _emptySprites[rand];
     }
 
     private void ExtractResource()
     {
-        Debug.Log($"Gained a {_resource}");
+        //Debug.Log($"Gained a {_resource}");
+
+        switch (_resource)
+        {
+            case ResourceType.None:
+                break;
+
+            case ResourceType.Energy:
+                GameController.Instance.GainEnergy(_tilevalue * 5);
+                break;
+
+            case ResourceType.Emerald:
+                GameController.Instance.GainEmerald(_tilevalue * 1);
+                break;
+
+            case ResourceType.Framing:
+                GameController.Instance.GainFraming(_tilevalue * 1);
+                break;
+        }
 
         _resource = ResourceType.None;
         SetResourceSprite();
+    }
+
+    #endregion
+
+    #region Framing
+
+    public void FrameTile()
+    {
+        _tilevalue = Mathf.Abs(_tilevalue);
+        _tmp.color = _framedColor;
+        //TODO depict framing on framed tile;
     }
 
     #endregion

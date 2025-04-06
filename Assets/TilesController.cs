@@ -18,6 +18,7 @@ public class TilesController : MonoBehaviour
 
     //state
     public int CollapseThreshold => _collapseThreshold_base + _maxValue;
+    TileHandler _lastExcavatedTile;
 
     private void Awake()
     {
@@ -79,8 +80,22 @@ public class TilesController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Collapse!");
-            //TODO trigger loss
+            int framingCost = Mathf.Abs(_lastExcavatedTile.TileValue) * 2;
+            if (GameController.Instance.Framing >= framingCost)
+            {
+                Debug.Log($"framing! ");
+                GameController.Instance.SpendFraming(framingCost);
+                _lastExcavatedTile.FrameTile();
+                ValuesChanged?.Invoke();
+
+            }
+            else
+            {
+                Debug.Log("Collapse!");
+                //TODO trigger loss
+
+            }
+
             return runningValue;
         }
 
@@ -126,34 +141,33 @@ public class TilesController : MonoBehaviour
             isValid = false;
         }
 
-        Debug.Log($"Row {destinationRow} and col {destinationCol} is valid? {isValid}");
+        //Debug.Log($"Row {destinationRow} and col {destinationCol} is valid? {isValid}");
 
         return isValid;
     }
 
     public void ProcessMove(int row, int col)
     {
-        TileHandler targetTile = null;
+        _lastExcavatedTile = null;
         foreach (var tile in _tiles)
         {
             if (tile.Row == row && tile.Col == col)
             {
-                targetTile = tile;
+                _lastExcavatedTile = tile;
                 break;
             }
         }
 
-        if (targetTile != null)
+        if (_lastExcavatedTile != null)
         {
-            targetTile.ExcavateTile();
+            _lastExcavatedTile.ExcavateTile();
+
 
             GetTileHandlerAtPosition(row - 1, col)?.ShowType();
             GetTileHandlerAtPosition(row + 1, col)?.ShowType();
             GetTileHandlerAtPosition(row, col + 1)?.ShowType();
             GetTileHandlerAtPosition(row, col - 1)?.ShowType();
             ValuesChanged?.Invoke();
-
-
         }
         else
         {

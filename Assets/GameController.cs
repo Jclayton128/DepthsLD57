@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
 
     public void SpendEnergy(int amountToSpend)
     {
+        Debug.Log($"spent {amountToSpend} energy");
         _energy -= amountToSpend;
         CurrenciesChanged?.Invoke();
     }
