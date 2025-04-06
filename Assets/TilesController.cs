@@ -32,8 +32,16 @@ public class TilesController : MonoBehaviour
     {
         foreach (var tile in _tiles)
         {
+            //TODO a better way to assign values?
             int rand = UnityEngine.Random.Range(_minValue, _maxValue + 1);
-            tile.SetTileValue(rand);
+
+            TileHandler.ResourceType resource = TileHandler.ResourceType.None;
+            int resrand = UnityEngine.Random.Range(0, 11);
+            if ((resrand > 5 && resrand <= 7)) resource = TileHandler.ResourceType.Energy;
+            if ((resrand > 7 && resrand <= 9)) resource = TileHandler.ResourceType.Framing;
+            if ((resrand > 9 && resrand <= 10)) resource = TileHandler.ResourceType.Emerald;
+
+            tile.SetUpTileValue(rand, resource);
         }
         ValuesChanged?.Invoke();
     }
@@ -65,14 +73,14 @@ public class TilesController : MonoBehaviour
             }
         }
 
-        if (runningValue < _collapseThreshold_base)
+        if (runningValue > _collapseThreshold_base)
         {
-            Debug.Log("Collapse!");
-            //TODO trigger loss
-            return 0;
+            return runningValue;
         }
         else
         {
+            Debug.Log("Collapse!");
+            //TODO trigger loss
             return runningValue;
         }
 
@@ -90,14 +98,14 @@ public class TilesController : MonoBehaviour
             }
         }
 
-        if (runningValue < _collapseThreshold_base)
+        if (runningValue > _collapseThreshold_base)
         {
-            Debug.Log("Collapse!");
-            //TODO trigger loss
-            return 0;
+            return runningValue;
         }
         else
         {
+            Debug.Log("Collapse!");
+            //TODO trigger loss
             return runningValue;
         }
     }
@@ -111,13 +119,16 @@ public class TilesController : MonoBehaviour
     public bool CheckIfPositionIsValid(int destinationRow, int destinationCol)
     {
         bool isValid = true;
-
+        
         if (destinationRow > _mapSize - 1 ||
             destinationCol < 0 || destinationCol > _mapSize - 1)
         {
             isValid = false;
         }
-            return isValid;
+
+        Debug.Log($"Row {destinationRow} and col {destinationCol} is valid? {isValid}");
+
+        return isValid;
     }
 
     public void ProcessMove(int row, int col)
@@ -136,10 +147,10 @@ public class TilesController : MonoBehaviour
         {
             targetTile.ExcavateTile();
 
-            GetTileHandlerAtPosition(row - 1, col)?.ShowValue();
-            GetTileHandlerAtPosition(row + 1, col)?.ShowValue();
-            GetTileHandlerAtPosition(row, col + 1)?.ShowValue();
-            GetTileHandlerAtPosition(row, col - 1)?.ShowValue();
+            GetTileHandlerAtPosition(row - 1, col)?.ShowType();
+            GetTileHandlerAtPosition(row + 1, col)?.ShowType();
+            GetTileHandlerAtPosition(row, col + 1)?.ShowType();
+            GetTileHandlerAtPosition(row, col - 1)?.ShowType();
             ValuesChanged?.Invoke();
 
 

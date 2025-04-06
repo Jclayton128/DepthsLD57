@@ -8,7 +8,8 @@ public class TotalizerDriver : MonoBehaviour
 {
 
     //refs
-    [SerializeField] TextMeshProUGUI _valueTMP = null;
+    [SerializeField] TextMeshProUGUI _valueTMPGUI = null;
+    [SerializeField] TextMeshPro _valueTMP = null;
 
     public void SetValue(int value)
     {

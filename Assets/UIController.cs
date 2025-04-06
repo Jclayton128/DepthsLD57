@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class UIController : MonoBehaviour
@@ -11,7 +12,9 @@ public class UIController : MonoBehaviour
     //scene refs
     [SerializeField] TotalizerDriver[] _rowTotalizers = null;
     [SerializeField] TotalizerDriver[] _columnTotalizers = null;
-
+    [SerializeField] TextMeshPro _emeraldTMP = null;
+    [SerializeField] TextMeshPro _energyTMP = null;
+    [SerializeField] TextMeshPro _framingTMP = null;
 
     private void Awake()
     {
@@ -21,6 +24,20 @@ public class UIController : MonoBehaviour
     private void Start()
     {
         TilesController.Instance.ValuesChanged += SetNewTotalizerValues;
+        GameController.Instance.RunStarted += HandleRunStarted;
+    }
+
+    private void HandleRunStarted()
+    {
+        GameController.Instance.CurrenciesChanged += SetCurrencies;
+        SetCurrencies();
+    }
+
+    private void SetCurrencies()
+    {
+        _emeraldTMP.text = GameController.Instance.Emerald.ToString();
+        _energyTMP.text = GameController.Instance.Energy.ToString();
+        _framingTMP.text = GameController.Instance.Framing.ToString();
     }
 
     private void SetNewTotalizerValues()

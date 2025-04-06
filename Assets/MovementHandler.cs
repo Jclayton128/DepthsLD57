@@ -30,7 +30,7 @@ public class MovementHandler : MonoBehaviour
                 TilesController.Instance.ProcessMove(_row, _col);
             }
 
-            else if (TilesController.Instance.CheckIfPositionIsValid(_col, _row - 1))
+            else if (TilesController.Instance.CheckIfPositionIsValid(_row - 1, _col))
             {
                 transform.position = new Vector2(_col, _row - 1);
                 _col = Mathf.RoundToInt(transform.position.x);
@@ -41,7 +41,7 @@ public class MovementHandler : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (TilesController.Instance.CheckIfPositionIsValid(_col, _row + 1))
+            if (TilesController.Instance.CheckIfPositionIsValid( _row + 1, _col))
             {
                 transform.position = new Vector2(_col, _row + 1);
                 _col = Mathf.RoundToInt(transform.position.x);
@@ -51,7 +51,7 @@ public class MovementHandler : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (TilesController.Instance.CheckIfPositionIsValid(_col - 1, _row))
+            if (TilesController.Instance.CheckIfPositionIsValid(_row, _col - 1))
             {
                 transform.position = new Vector2(_col - 1, _row);
                 _col = Mathf.RoundToInt(transform.position.x);
@@ -61,7 +61,7 @@ public class MovementHandler : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (TilesController.Instance.CheckIfPositionIsValid(_col +1 , _row))
+            if (TilesController.Instance.CheckIfPositionIsValid(_row, _col +1))
             {
                 transform.position = new Vector2(_col + 1, _row);
                 _col = Mathf.RoundToInt(transform.position.x);
