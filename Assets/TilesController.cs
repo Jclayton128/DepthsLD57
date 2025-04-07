@@ -76,7 +76,10 @@ public class TilesController : MonoBehaviour
 
         if (runningValue > _collapseThreshold_base)
         {
-            return runningValue;
+            if (runningValue <= CollapseThreshold)
+            {
+                StartEmittingOnRow(row);
+            }
         }
         else
         {
@@ -95,10 +98,9 @@ public class TilesController : MonoBehaviour
                 //TODO trigger loss
 
             }
-
-            return runningValue;
         }
 
+        return runningValue;
 
     }
 
@@ -116,8 +118,11 @@ public class TilesController : MonoBehaviour
 
 
         if (runningValue > _collapseThreshold_base)
-        {          
-            return runningValue;
+        {
+            if (runningValue <= CollapseThreshold)
+            {
+                StartEmittingOnCol(col);
+            }
         }
         else
         {
@@ -137,9 +142,9 @@ public class TilesController : MonoBehaviour
                 //TODO trigger loss
 
             }
-
-            return runningValue;
         }
+
+        return runningValue;
     }
 
     public Vector2Int GetRandomStartPos()
@@ -207,4 +212,36 @@ public class TilesController : MonoBehaviour
         //Debug.LogWarning("no tile handler found at position");
         return null;
     }
+
+    #region Emitting Particles
+    public void StartEmittingOnRow(int row)
+    {
+        foreach (var tile in _tiles)
+        {
+            if (tile.Row == row)
+            {
+                tile.StartEmittingParticles();
+            }
+        }
+    }
+
+    public void StartEmittingOnCol(int col)
+    {
+        foreach (var tile in _tiles)
+        {
+            if (tile.Col == col)
+            {
+                tile.StartEmittingParticles();
+            }
+        }
+    }
+
+    public void StopEmittingEverywhere()
+    {
+        foreach (var tile in _tiles)
+        {
+            tile.StopClearEmittingParticles();
+        }
+    }
+    #endregion
 }

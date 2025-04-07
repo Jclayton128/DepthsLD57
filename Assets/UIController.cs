@@ -44,12 +44,14 @@ public class UIController : MonoBehaviour
     {
         for (int i = 0; i < _rowTotalizers.Length; i++)
         {
-            _rowTotalizers[i].SetValue(TilesController.Instance.GetTotalInRow(i));
+            int rowTotal = TilesController.Instance.GetTotalInRow(i);
+            _rowTotalizers[i].SetValue(rowTotal);
         }
 
         for (int i = 0; i < _columnTotalizers.Length; i++)
         {
-            _columnTotalizers[i].SetValue(TilesController.Instance.GetTotalInColumn(i));
+            int colTotal = TilesController.Instance.GetTotalInColumn(i);
+            _columnTotalizers[i].SetValue(colTotal);
         }
     }
 }

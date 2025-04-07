@@ -7,6 +7,7 @@ using System;
 public class TileHandler : MonoBehaviour
 {
     public enum ResourceType { None, Energy, Emerald, Framing, Count}
+    public enum TileTypes { Empty, Sand, Dirt, Rock}
 
     //refs
     [SerializeField] TextMeshPro _tmp = null;
@@ -14,11 +15,17 @@ public class TileHandler : MonoBehaviour
     [SerializeField] SpriteRenderer _srResource = null;
     [SerializeField] SpriteRenderer _srFrame = null;
     [SerializeField] SpriteRenderer _srCover = null;
+    [SerializeField] ParticleSystem _ps = null;
 
     //settings
     [SerializeField] Color _unexcavatedColor = Color.white;
     [SerializeField] Color _excavatedColor = Color.grey;
     [SerializeField] Color _framedColor = Color.yellow;
+
+    [SerializeField] Color _sandParticleColor = Color.yellow;
+    [SerializeField] Color _dirtParticleColor = Color.yellow;
+    [SerializeField] Color _rockParticleColor = Color.blue;
+
     [SerializeField] Sprite[] _hiddenSprites = null;
     [SerializeField] Sprite[] _frameSprites = null;
     [SerializeField] Sprite[] _emptySprites = null;
@@ -37,6 +44,9 @@ public class TileHandler : MonoBehaviour
     public int Row => _row;
     public int Col => _col;
 
+    TileTypes _tileType;
+    public TileTypes TileType => _tileType;
+
     [SerializeField] int _tilevalue;
     public int TileValue => _tilevalue;
 
@@ -50,11 +60,15 @@ public class TileHandler : MonoBehaviour
     [SerializeField] bool _isExcavated;
     public bool IsExcavated => _isExcavated;
 
+    ParticleSystem.MainModule _psem;
+
     private void Awake()
     {
         _isTypeRevealed = false;
         _isValueRevealed = false;
         _isExcavated = false;
+        _psem = _ps.main;
+        _ps.Stop();
         HideValue();
         _col = Mathf.RoundToInt(transform.position.x);
         _row = Mathf.RoundToInt(transform.position.y);
@@ -67,11 +81,12 @@ public class TileHandler : MonoBehaviour
         HideValue();
         HideType();
         HideFrame();
+        StopClearEmittingParticles();
         _tilevalue = value;
         _tmp.text = _tilevalue.ToString();
         _isExcavated = false;
         
-        SetSpriteBasedOnValue();
+        DetermineTypeAndSetSprite();
         _resource = resource;
         SetResourceSprite();
     }
@@ -100,30 +115,34 @@ public class TileHandler : MonoBehaviour
     #region Value
 
 
-    private void SetSpriteBasedOnValue()
+    private void DetermineTypeAndSetSprite()
     {
         if (_tilevalue == 0)
         {
             int rand = UnityEngine.Random.Range(0, _emptySprites.Length);
             _srBody.sprite = _emptySprites[rand];
+            _tileType = TileTypes.Empty;
             //_srBody.sortingOrder = 0;
         }
         else if ((_tilevalue > 0 && _tilevalue <= 3))
         {
             int rand = UnityEngine.Random.Range(0, _sandSprites.Length);
             _srBody.sprite = _sandSprites[rand];
+            _tileType = TileTypes.Sand;
             //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 3 && _tilevalue <= 6))
         {
             int rand = UnityEngine.Random.Range(0, _dirtSprites.Length);
             _srBody.sprite = _dirtSprites[rand];
+            _tileType = TileTypes.Dirt;
             //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 6 && _tilevalue <= 9))
         {
             int rand = UnityEngine.Random.Range(0, _rockSprites.Length);
             _srBody.sprite = _rockSprites[rand];
+            _tileType = TileTypes.Rock;
             //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else
@@ -215,7 +234,7 @@ public class TileHandler : MonoBehaviour
                 GameController.Instance.GainFraming(_tilevalue * 1);
                 break;
         }
-
+        StopClearEmittingParticles();
         _resource = ResourceType.None;
         SetResourceSprite();
     }
@@ -238,5 +257,41 @@ public class TileHandler : MonoBehaviour
     {
         _srFrame.sprite = null;
     }
+    #endregion
+
+    #region Particles
+
+    public void StartEmittingParticles()
+    {
+        _ps.Play();
+        switch (_tileType)
+        {
+            case TileTypes.Empty:
+                _psem.startColor = Color.clear;
+                break;
+
+            case TileTypes.Sand:
+                _psem.startColor = _sandParticleColor;
+                break;
+
+            case TileTypes.Dirt:
+                _psem.startColor = _dirtParticleColor;
+                break;
+
+            case TileTypes.Rock:
+                _psem.startColor = _rockParticleColor;
+                break;
+
+        }
+        if (_isExcavated) _ps.Stop();
+
+    }
+
+    public void StopClearEmittingParticles()
+    {
+        _ps.Stop();
+        _ps.Clear();
+    }
+
     #endregion
 }
