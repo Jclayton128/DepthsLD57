@@ -9,6 +9,10 @@ public class TilesController : MonoBehaviour
 
     public Action ValuesChanged;
 
+    //refs
+    [SerializeField] GameObject[] _arrows = null;
+
+
     //settings
     [SerializeField] List<TileHandler> _tiles = null;
     [SerializeField] int _mapSize = 8;
@@ -23,6 +27,10 @@ public class TilesController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        foreach (var arrow in _arrows)
+        {
+            arrow.SetActive(false);
+        }
     }
 
 
@@ -44,6 +52,12 @@ public class TilesController : MonoBehaviour
 
             tile.SetUpTileValue(rand, resource);
         }
+
+        foreach (var arrow in _arrows)
+        {
+            arrow.SetActive(false);
+        }
+
         ValuesChanged?.Invoke();
     }
 
@@ -94,8 +108,9 @@ public class TilesController : MonoBehaviour
             }
             else
             {
+                CameraController.Instance.ShakeCamera(2);
                 Debug.Log("Collapse!");
-                //TODO trigger loss
+                GameController.Instance.ExecuteLoss();
 
             }
         }
@@ -139,6 +154,7 @@ public class TilesController : MonoBehaviour
             {
                 CameraController.Instance.ShakeCamera(2);
                 Debug.Log("Collapse!");
+                GameController.Instance.ExecuteLoss();
                 //TODO trigger loss
 
             }
@@ -149,8 +165,8 @@ public class TilesController : MonoBehaviour
 
     public Vector2Int GetRandomStartPos()
     {
-        int rand = UnityEngine.Random.Range(0, _mapSize);
-        return new Vector2Int(rand, _mapSize - 1);
+        //int rand = UnityEngine.Random.Range(0, _mapSize);
+        return new Vector2Int(4, _mapSize - 1);
     }
 
     public bool CheckIfPositionIsValid(int destinationRow, int destinationCol)
@@ -187,7 +203,10 @@ public class TilesController : MonoBehaviour
 
                 _lastExcavatedTile.ExcavateTile();
 
-                GetTileHandlerAtPosition(row - 1, col)?.ShowType();
+                TileHandler belowTile = GetTileHandlerAtPosition(row - 1, col);
+                    if (belowTile) belowTile.ShowType();
+                    else _arrows[col].SetActive(true);
+
                 GetTileHandlerAtPosition(row + 1, col)?.ShowType();
                 GetTileHandlerAtPosition(row, col + 1)?.ShowType();
                 GetTileHandlerAtPosition(row, col - 1)?.ShowType();

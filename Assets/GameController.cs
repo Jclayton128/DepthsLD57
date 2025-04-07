@@ -11,6 +11,11 @@ public class GameController : MonoBehaviour
     public Action RunStarted;
     public Action CurrenciesChanged;
 
+    //refs
+    [SerializeField] GameObject _titleHolder = null;
+    [SerializeField] GameObject _endgameHolder = null;
+    [SerializeField] TextMeshPro _endgameEmeraldCountTMP = null;
+ 
     //settings
     [SerializeField] GameObject _playerPrefab = null; 
 
@@ -33,14 +38,17 @@ public class GameController : MonoBehaviour
         _energy = 100;
         _emeralds = 0;
         _framing = 0;
+        _endgameHolder.SetActive(false);
+        _titleHolder.SetActive(true);
     }
 
-
+    
 
     public void StartRun()
     {
         if (_player) Destroy(_player);
 
+        CameraController.Instance.MoveToGameplay();
 
         Vector2 startPos = TilesController.Instance.GetRandomStartPos();
         _player = Instantiate(_playerPrefab, startPos, Quaternion.identity);
@@ -86,6 +94,14 @@ public class GameController : MonoBehaviour
         _framing += count;
         CurrenciesChanged?.Invoke();
     }
-
-
+    
+    public void ExecuteLoss()
+    {
+        if (_player) Destroy(_player);
+        _player = null;
+        CameraController.Instance.MoveToTitle();
+        _titleHolder.SetActive(false);
+        _endgameEmeraldCountTMP.text = _emeralds.ToString();
+        _endgameHolder.SetActive(true);
+    }
 }

@@ -17,7 +17,7 @@ public class TotalizerDriver : MonoBehaviour
 
         _valueTMP.text = newValue.ToString();
 
-        if ( newValue < TilesController.Instance.CollapseThreshold)
+        if ( newValue <= TilesController.Instance.CollapseThreshold)
         {
             _valueTMP.color = Color.red;
             if (newValue < _currentValue)
