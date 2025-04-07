@@ -50,6 +50,7 @@ public class MovementHandler : MonoBehaviour
             if (TilesController.Instance.CheckIfPositionIsValid(_row, _col - 1))
             {
                 transform.position = new Vector2(_col - 1, _row);
+                transform.localScale = new Vector3(1, 1, 1);
                 _didMove = true;
             }
         }
@@ -58,6 +59,7 @@ public class MovementHandler : MonoBehaviour
             if (TilesController.Instance.CheckIfPositionIsValid(_row, _col +1))
             {
                 transform.position = new Vector2(_col + 1, _row);
+                transform.localScale = new Vector3(-1, 1, 1);
                 _didMove = true;
             }
         }

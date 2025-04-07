@@ -3805,6 +3805,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4078893887015080871, guid: ae6ca46a19aa80b409e19c72a2a3c820, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7194769499049043433, guid: ae6ca46a19aa80b409e19c72a2a3c820, type: 3}
       propertyPath: m_Name
       value: Tile_4_1
@@ -5983,8 +5987,12 @@ PrefabInstance:
       value: EnergyTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_text
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSize
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
@@ -5992,7 +6000,7 @@ PrefabInstance:
       objectReference: {fileID: 957788818}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSizeBase
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_sharedMaterial
@@ -6819,8 +6827,12 @@ PrefabInstance:
       value: FramingTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_text
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSize
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
@@ -6828,7 +6840,7 @@ PrefabInstance:
       objectReference: {fileID: 1153422434}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSizeBase
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_sharedMaterial
@@ -12391,11 +12403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_text
-      value: 1
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSize
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
@@ -12407,7 +12419,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_fontSizeBase
-      value: 5
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_sharedMaterial
