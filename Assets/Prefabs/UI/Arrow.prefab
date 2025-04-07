@@ -110,5 +110,5 @@ MonoBehaviour:
   - {fileID: -1144276622, guid: d0840e64740e18748be2cbfcff248d77, type: 3}
   FramesPerSprite: 6
   IsLooping: 1
-  ShouldDestroyOnEnd: 1
+  ShouldDestroyOnEnd: 0
   _sr: {fileID: 1340308619967347467}

@@ -9,7 +9,11 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance { get; private set; }
     public Action RunStarted;
-    public Action CurrenciesChanged;
+    public Action EmeraldsIncreased;
+    public Action EnergyIncreased;
+    public Action<bool> EnergyDecreased; 
+    public Action FramingIncreased;
+    public Action FramingDecreased;
 
     //refs
     [SerializeField] GameObject _titleHolder = null;
@@ -71,14 +75,16 @@ public class GameController : MonoBehaviour
     public void GainEmerald(int count)
     {
         _emeralds += count;
-        CurrenciesChanged?.Invoke();
+        EmeraldsIncreased?.Invoke();
     }
 
     public void SpendEnergy(int amountToSpend)
     {
         //Debug.Log($"spent {amountToSpend} energy");
         _energy -= amountToSpend;
-        CurrenciesChanged?.Invoke();
+
+        if (amountToSpend > 1) EnergyDecreased?.Invoke(false);
+        else EnergyDecreased?.Invoke(true);
 
         if (_energy <= 0)
         {
@@ -89,19 +95,19 @@ public class GameController : MonoBehaviour
     public void GainEnergy(int count)
     {
         _energy += count;
-        CurrenciesChanged?.Invoke();
+        EnergyIncreased?.Invoke();
     }
 
     public void SpendFraming(int framingToSpend)
     {
         _framing -= framingToSpend;
-        CurrenciesChanged?.Invoke();
+        FramingDecreased?.Invoke();
     }
 
     public void GainFraming (int count)
     {
         _framing += count;
-        CurrenciesChanged?.Invoke();
+        FramingIncreased?.Invoke();
     }
     
     public void ExecuteLoss(bool wasCollapse)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Febucci.UI.Core;
 
 
 public class UIController : MonoBehaviour
@@ -12,9 +13,9 @@ public class UIController : MonoBehaviour
     //scene refs
     [SerializeField] TotalizerDriver[] _rowTotalizers = null;
     [SerializeField] TotalizerDriver[] _columnTotalizers = null;
-    [SerializeField] TextMeshPro _emeraldTMP = null;
-    [SerializeField] TextMeshPro _energyTMP = null;
-    [SerializeField] TextMeshPro _framingTMP = null;
+    [SerializeField] Febucci.UI.TextAnimator _emeraldTMP = null;
+    [SerializeField] Febucci.UI.TextAnimator _energyTMP = null;
+    [SerializeField] Febucci.UI.TextAnimator _framingTMP = null;
 
     private void Awake()
     {
@@ -29,15 +30,47 @@ public class UIController : MonoBehaviour
 
     private void HandleRunStarted()
     {
-        GameController.Instance.CurrenciesChanged += SetCurrencies;
-        SetCurrencies();
+        GameController.Instance.EmeraldsIncreased += HandleEmeraldIncrease;
+
+        GameController.Instance.EnergyIncreased += HandleEnergyIncreased;
+        GameController.Instance.EnergyDecreased += HandleEnergyDecreased;
+
+        GameController.Instance.FramingIncreased += HandleFramingDecreased;
+        GameController.Instance.FramingDecreased += HandleFramingDecreased;
+
+        HandleEmeraldIncrease();
+
+        HandleEnergyIncreased();
+        HandleFramingIncreased();
+
+        HandleEnergyDecreased(false);
+        HandleFramingDecreased();
     }
 
-    private void SetCurrencies()
+    private void HandleEmeraldIncrease()
     {
-        _emeraldTMP.text = GameController.Instance.Emerald.ToString();
-        _energyTMP.text = GameController.Instance.Energy.ToString();
-        _framingTMP.text = GameController.Instance.Framing.ToString();
+        _emeraldTMP.SetText("{size}" + GameController.Instance.Emerald.ToString() + "{/size}", false);
+    }
+
+    private void HandleEnergyIncreased()
+    {
+        _energyTMP.SetText("{size}" + GameController.Instance.Energy.ToString() + "{/size}", false);
+    }
+
+    private void HandleFramingIncreased()
+    {
+        _framingTMP.SetText("{size}" + GameController.Instance.Framing.ToString() + "{/size}", false);
+    }
+
+    private void HandleEnergyDecreased(bool isMoreThanOne)
+    {
+        if (isMoreThanOne) _energyTMP.SetText("{fade}" + GameController.Instance.Energy.ToString() + "{/fade}", false);
+        else _energyTMP.SetText(GameController.Instance.Energy.ToString(), false);
+    }
+
+    private void HandleFramingDecreased()
+    {
+        _framingTMP.SetText("{fade}" + GameController.Instance.Framing.ToString() + "{/fade}", false);
     }
 
     private void SetNewTotalizerValues()

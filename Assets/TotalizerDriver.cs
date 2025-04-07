@@ -15,17 +15,22 @@ public class TotalizerDriver : MonoBehaviour
     public void SetValue(int newValue)
     {
 
-        _valueTMP.text = newValue.ToString();
-
         if ( newValue <= TilesController.Instance.CollapseThreshold)
         {
-            _valueTMP.color = Color.red;
+            _valueTMP.color = Color.yellow;
+            _valueTMP.text = "<shake>" + newValue.ToString();
             if (newValue < _currentValue)
             {
                 CameraController.Instance.ShakeCamera(newValue/9f);
             }
         }
-        else _valueTMP.color = Color.white;
+        else
+        {
+            _valueTMP.text = newValue.ToString();
+            _valueTMP.color = Color.white;
+        }
+            
+
 
         _currentValue = newValue;
     }
