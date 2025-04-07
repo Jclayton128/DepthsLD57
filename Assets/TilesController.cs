@@ -85,7 +85,7 @@ public class TilesController : MonoBehaviour
             {
                 Debug.Log($"framing! ");
                 GameController.Instance.SpendFraming(framingCost);
-                _lastExcavatedTile.FrameTile();
+                _lastExcavatedTile.ShowFrame();
                 ValuesChanged?.Invoke();
 
             }
@@ -119,8 +119,22 @@ public class TilesController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Collapse!");
-            //TODO trigger loss
+            int framingCost = Mathf.Abs(_lastExcavatedTile.TileValue) * 2;
+            if (GameController.Instance.Framing >= framingCost)
+            {
+                Debug.Log($"framing! ");
+                GameController.Instance.SpendFraming(framingCost);
+                _lastExcavatedTile.ShowFrame();
+                ValuesChanged?.Invoke();
+
+            }
+            else
+            {
+                Debug.Log("Collapse!");
+                //TODO trigger loss
+
+            }
+
             return runningValue;
         }
     }

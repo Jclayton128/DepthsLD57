@@ -500,7 +500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -523,8 +523,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -533,6 +541,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -626,6 +638,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1108,7 +1124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -1131,8 +1147,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -1141,6 +1165,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -1234,6 +1262,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1493,7 +1525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -1516,8 +1548,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -1526,6 +1566,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -1619,6 +1663,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2183,7 +2231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -2206,8 +2254,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -2216,6 +2272,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -2309,6 +2369,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3010,7 +3074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -3033,8 +3097,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -3043,6 +3115,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -3136,6 +3212,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5628,9 +5708,29 @@ PrefabInstance:
       value: EnergyTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
       value: 
       objectReference: {fileID: 957788818}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480499574826506267, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5711,6 +5811,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8231695011996097257, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6345,9 +6449,29 @@ PrefabInstance:
       value: FramingTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
       value: 
       objectReference: {fileID: 1153422434}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480499574826506267, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6428,6 +6552,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8231695011996097257, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6693,7 +6821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -6716,8 +6844,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -6726,6 +6862,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -6819,6 +6959,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6943,7 +7087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -6966,8 +7110,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -6976,6 +7128,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -7069,6 +7225,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7713,7 +7873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -7736,8 +7896,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -7746,6 +7914,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -7839,6 +8011,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8242,7 +8418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -8265,8 +8441,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -8275,6 +8459,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -8368,6 +8556,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8498,7 +8690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -8521,8 +8713,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -8531,6 +8731,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -8624,6 +8828,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9166,7 +9374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -9189,8 +9397,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -9199,6 +9415,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -9292,6 +9512,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9633,7 +9857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -9656,8 +9880,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -9666,6 +9898,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -9759,6 +9995,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9819,7 +10059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -9842,8 +10082,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -9852,6 +10100,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -9945,6 +10197,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9983,7 +10239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -10006,8 +10262,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -10016,6 +10280,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -10109,6 +10377,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10234,7 +10506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -10257,8 +10529,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -10267,6 +10547,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -10360,6 +10644,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11512,8 +11800,12 @@ PrefabInstance:
       value: TotalizerGame_c_0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_text
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSize
-      value: 6.2
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_margin.w
@@ -11533,11 +11825,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_fontSizeMin
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_VerticalAlignment
@@ -11546,6 +11846,10 @@ PrefabInstance:
     - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050514851705370404, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5286732790401767295, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
       propertyPath: m_Pivot.x
@@ -11639,6 +11943,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 97974393
       objectReference: {fileID: 0}
+    - target: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11663,11 +11971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3849784e724862448c96310f5c7c7ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &1191425053521482420 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6991918325062422170, guid: 518851d0abc513e4db44cdbe79eb2070, type: 3}
-  m_PrefabInstance: {fileID: 1191425053521482416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1681527151312205670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11681,9 +11984,37 @@ PrefabInstance:
       value: EmeraldTMP
       objectReference: {fileID: 0}
     - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_renderer
       value: 
-      objectReference: {fileID: 1191425053521482420}
+      objectReference: {fileID: 1681527151312205673}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507855895153065892, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480499574826506267, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11764,6 +12095,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8231695011996097257, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6711008003621040419, guid: cb8c8bc843ca2b349a2b42fc0e6864ea, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11788,6 +12123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &1681527151312205673 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8231695011996097257, guid: 99fb48f5840913444b27e28061caa3f0, type: 3}
+  m_PrefabInstance: {fileID: 1681527151312205670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7871521645288418961
 PrefabInstance:
   m_ObjectHideFlags: 0

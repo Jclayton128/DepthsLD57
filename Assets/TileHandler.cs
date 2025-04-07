@@ -12,6 +12,7 @@ public class TileHandler : MonoBehaviour
     [SerializeField] TextMeshPro _tmp = null;
     [SerializeField] SpriteRenderer _srBody = null;
     [SerializeField] SpriteRenderer _srResource = null;
+    [SerializeField] SpriteRenderer _srFrame = null;
     [SerializeField] SpriteRenderer _srCover = null;
 
     //settings
@@ -19,6 +20,7 @@ public class TileHandler : MonoBehaviour
     [SerializeField] Color _excavatedColor = Color.grey;
     [SerializeField] Color _framedColor = Color.yellow;
     [SerializeField] Sprite[] _hiddenSprites = null;
+    [SerializeField] Sprite[] _frameSprites = null;
     [SerializeField] Sprite[] _emptySprites = null;
     [SerializeField] Sprite[] _sandSprites = null;
     [SerializeField] Sprite[] _dirtSprites = null;
@@ -61,6 +63,7 @@ public class TileHandler : MonoBehaviour
     {
         HideValue();
         HideType();
+        HideFrame();
         _tilevalue = value;
         _tmp.text = _tilevalue.ToString();
         _isExcavated = false;
@@ -100,26 +103,31 @@ public class TileHandler : MonoBehaviour
         {
             int rand = UnityEngine.Random.Range(0, _emptySprites.Length);
             _srBody.sprite = _emptySprites[rand];
+            _srBody.sortingOrder = 0;
         }
         else if ((_tilevalue > 0 && _tilevalue <= 3))
         {
             int rand = UnityEngine.Random.Range(0, _sandSprites.Length);
             _srBody.sprite = _sandSprites[rand];
+            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 3 && _tilevalue <= 6))
         {
             int rand = UnityEngine.Random.Range(0, _dirtSprites.Length);
             _srBody.sprite = _dirtSprites[rand];
+            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 6 && _tilevalue <= 9))
         {
             int rand = UnityEngine.Random.Range(0, _rockSprites.Length);
             _srBody.sprite = _rockSprites[rand];
+            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else
         {
             Debug.LogWarning("Tile value doesn't map to a sprite");
         }
+
 
     }
 
@@ -193,7 +201,7 @@ public class TileHandler : MonoBehaviour
                 break;
 
             case ResourceType.Energy:
-                GameController.Instance.GainEnergy(_tilevalue * 5);
+                GameController.Instance.GainEnergy(_tilevalue * 10);
                 break;
 
             case ResourceType.Emerald:
@@ -213,12 +221,19 @@ public class TileHandler : MonoBehaviour
 
     #region Framing
 
-    public void FrameTile()
+    public void ShowFrame()
     {
         _tilevalue = Mathf.Abs(_tilevalue);
         _tmp.color = _framedColor;
         //TODO depict framing on framed tile;
+        _srFrame.enabled = true;
+        int rand = UnityEngine.Random.Range(0, _frameSprites.Length);
+        _srFrame.sprite = _frameSprites[rand];
     }
 
+    public void HideFrame()
+    {
+        _srFrame.sprite = null;
+    }
     #endregion
 }
