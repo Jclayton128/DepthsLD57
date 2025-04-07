@@ -50,7 +50,15 @@ public class GameController : MonoBehaviour
         _titleHolder.SetActive(true);
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+ 
+            GameController.Instance.StartRun();
+        }
+    }
+
 
     public void StartRun()
     {
@@ -64,7 +72,14 @@ public class GameController : MonoBehaviour
         //Instantly excavate the place where player started
         TilesController.Instance.PushNewRandomTileValues();
 
-        RunStarted?.Invoke();
+        _energy = 100;
+        _emeralds = 0;
+        _framing = 0;
+        EmeraldsIncreased?.Invoke();
+        EnergyDecreased?.Invoke(false);
+        FramingDecreased?.Invoke();
+
+    RunStarted?.Invoke();
     }
 
     public void StartNextMine()
@@ -89,6 +104,10 @@ public class GameController : MonoBehaviour
         if (_energy <= 0)
         {
             ExecuteLoss(false);
+        }
+        else if (_energy < 30)
+        {
+            AudioController.Instance.PlaySound_ExhaustSoon();
         }
     }
 
@@ -121,11 +140,13 @@ public class GameController : MonoBehaviour
 
         if (wasCollapse)
         {
+            AudioController.Instance.PlaySound_CollapseNow();
             _endgameCauseTMP.text = "Cause: Collapse";
             _endgameTipTMP.text = _endgameTip_Collapse;
         }
         else
         {
+            AudioController.Instance.PlaySound_ExhaustNow();
             _endgameCauseTMP.text = "Cause: Exhaustion";
             _endgameTipTMP.text = _endgameTip_Starve;
         }

@@ -21,6 +21,7 @@ public class TotalizerDriver : MonoBehaviour
             _valueTMP.text = "<shake>" + newValue.ToString();
             if (newValue < _currentValue)
             {
+                AudioController.Instance.PlaySound_CollapseSoon();
                 CameraController.Instance.ShakeCamera(newValue/9f);
             }
         }

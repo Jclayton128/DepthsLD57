@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     //settings
     [SerializeField] float _yPos_Title = 18f;
     [SerializeField] float _yPos_Gameplay = 4f;
-    [SerializeField] float _moveTime = 3f;
+    [SerializeField] float _moveTime = 6f;
 
 
     //state

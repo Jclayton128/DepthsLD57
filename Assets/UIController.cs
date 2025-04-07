@@ -17,9 +17,12 @@ public class UIController : MonoBehaviour
     [SerializeField] Febucci.UI.TextAnimator _energyTMP = null;
     [SerializeField] Febucci.UI.TextAnimator _framingTMP = null;
 
+    Color _startingColor;
+
     private void Awake()
     {
         Instance = this;
+        _startingColor = _energyTMP.GetComponent<TextMeshPro>().color;
     }
 
     private void Start()
@@ -64,8 +67,18 @@ public class UIController : MonoBehaviour
 
     private void HandleEnergyDecreased(bool isMoreThanOne)
     {
-        if (isMoreThanOne) _energyTMP.SetText("{fade}" + GameController.Instance.Energy.ToString() + "{/fade}", false);
-        else _energyTMP.SetText(GameController.Instance.Energy.ToString(), false);
+        int energyNow = GameController.Instance.Energy;
+        if (isMoreThanOne) _energyTMP.SetText("{fade}" + energyNow.ToString() + "{/fade}", false);
+        else _energyTMP.SetText(energyNow.ToString(), false);
+
+        if (energyNow < 30)
+        {
+            _energyTMP.GetComponent<TextMeshPro>().color = Color.yellow;
+        }
+        else
+        {
+            _energyTMP.GetComponent<TextMeshPro>().color = _startingColor;
+        }
     }
 
     private void HandleFramingDecreased()

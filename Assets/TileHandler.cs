@@ -195,13 +195,36 @@ public class TileHandler : MonoBehaviour
     public void ExcavateTile()
     {
         if (_isExcavated) return;
-        _isExcavated = true;
+        else
+        {
+            switch (_tileType)
+            {
+                case TileTypes.Empty:
+                    //AudioController.Instance.PlaySound_Empty();
+                    break;
 
+                case TileTypes.Sand:
+                    AudioController.Instance.PlaySound_Sand();
+                    break;
+
+                case TileTypes.Dirt:
+                    AudioController.Instance.PlaySound_Dirt();
+                    break;
+
+                case TileTypes.Rock:
+                    AudioController.Instance.PlaySound_Rock();
+                    break;
+            }
+        }
+
+
+        _isExcavated = true;
 
         if (_resource != ResourceType.None)
         {
             ExtractResource();
         }
+            
 
         GameController.Instance.SpendEnergy(_tilevalue);
 
@@ -223,15 +246,18 @@ public class TileHandler : MonoBehaviour
                 break;
 
             case ResourceType.Energy:
-                GameController.Instance.GainEnergy(_tilevalue * 10);
+                GameController.Instance.GainEnergy(_tilevalue * 5);
+                AudioController.Instance.PlaySound_EnergyGain();
                 break;
 
             case ResourceType.Emerald:
                 GameController.Instance.GainEmerald(_tilevalue * 1);
+                AudioController.Instance.PlaySound_EmeraldGain();
                 break;
 
             case ResourceType.Framing:
                 GameController.Instance.GainFraming(_tilevalue * 1);
+                AudioController.Instance.PlaySound_FramingGain();
                 break;
         }
         StopClearEmittingParticles();
@@ -249,6 +275,7 @@ public class TileHandler : MonoBehaviour
         _tmp.color = _framedColor;
         //TODO depict framing on framed tile;
         _srFrame.enabled = true;
+        AudioController.Instance.PlaySound_FramingInstall();
         int rand = UnityEngine.Random.Range(0, _frameSprites.Length);
         _srFrame.sprite = _frameSprites[rand];
     }

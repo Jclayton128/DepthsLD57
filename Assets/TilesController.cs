@@ -212,6 +212,10 @@ public class TilesController : MonoBehaviour
                 GetTileHandlerAtPosition(row, col - 1)?.ShowType();
                 ValuesChanged?.Invoke();
             }
+            else
+            {
+                AudioController.Instance.PlaySound_Empty();
+            }
         }
         else
         {
