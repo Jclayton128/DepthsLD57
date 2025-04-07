@@ -22,7 +22,7 @@ public class MovementHandler : MonoBehaviour
     void Update()
     {
         _didMove = false;
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             if (_row - 1 < 0)
             {
@@ -37,7 +37,7 @@ public class MovementHandler : MonoBehaviour
                 _didMove = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             if (TilesController.Instance.CheckIfPositionIsValid( _row + 1, _col))
             {
@@ -45,7 +45,7 @@ public class MovementHandler : MonoBehaviour
                 _didMove = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             if (TilesController.Instance.CheckIfPositionIsValid(_row, _col - 1))
             {
@@ -54,7 +54,7 @@ public class MovementHandler : MonoBehaviour
                 _didMove = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             if (TilesController.Instance.CheckIfPositionIsValid(_row, _col +1))
             {

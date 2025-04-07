@@ -110,7 +110,7 @@ public class TilesController : MonoBehaviour
             {
                 CameraController.Instance.ShakeCamera(2);
                 Debug.Log("Collapse!");
-                GameController.Instance.ExecuteLoss();
+                GameController.Instance.ExecuteLoss(true);
 
             }
         }
@@ -154,7 +154,7 @@ public class TilesController : MonoBehaviour
             {
                 CameraController.Instance.ShakeCamera(2);
                 Debug.Log("Collapse!");
-                GameController.Instance.ExecuteLoss();
+                GameController.Instance.ExecuteLoss(true);
                 //TODO trigger loss
 
             }

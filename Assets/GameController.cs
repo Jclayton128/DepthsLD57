@@ -15,9 +15,13 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject _titleHolder = null;
     [SerializeField] GameObject _endgameHolder = null;
     [SerializeField] TextMeshPro _endgameEmeraldCountTMP = null;
+    [SerializeField] TextMeshPro _endgameCauseTMP = null;
+    [SerializeField] TextMeshPro _endgameTipTMP = null;
  
     //settings
-    [SerializeField] GameObject _playerPrefab = null; 
+    [SerializeField] GameObject _playerPrefab = null;
+    string _endgameTip_Collapse = "Don't dig away too much!";
+    string _endgameTip_Starve = "Don't run out of energy!";
 
 
     //state
@@ -75,6 +79,11 @@ public class GameController : MonoBehaviour
         //Debug.Log($"spent {amountToSpend} energy");
         _energy -= amountToSpend;
         CurrenciesChanged?.Invoke();
+
+        if (_energy <= 0)
+        {
+            ExecuteLoss(false);
+        }
     }
 
     public void GainEnergy(int count)
@@ -95,7 +104,7 @@ public class GameController : MonoBehaviour
         CurrenciesChanged?.Invoke();
     }
     
-    public void ExecuteLoss()
+    public void ExecuteLoss(bool wasCollapse)
     {
         if (_player) Destroy(_player);
         _player = null;
@@ -103,5 +112,16 @@ public class GameController : MonoBehaviour
         _titleHolder.SetActive(false);
         _endgameEmeraldCountTMP.text = _emeralds.ToString();
         _endgameHolder.SetActive(true);
+
+        if (wasCollapse)
+        {
+            _endgameCauseTMP.text = "Cause: Collapse";
+            _endgameTipTMP.text = _endgameTip_Collapse;
+        }
+        else
+        {
+            _endgameCauseTMP.text = "Cause: Exhaustion";
+            _endgameTipTMP.text = _endgameTip_Starve;
+        }
     }
 }
