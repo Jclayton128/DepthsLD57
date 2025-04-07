@@ -113,8 +113,10 @@ public class TilesController : MonoBehaviour
             }
         }
 
+
+
         if (runningValue > _collapseThreshold_base)
-        {
+        {          
             return runningValue;
         }
         else
@@ -130,6 +132,7 @@ public class TilesController : MonoBehaviour
             }
             else
             {
+                CameraController.Instance.ShakeCamera(2);
                 Debug.Log("Collapse!");
                 //TODO trigger loss
 
@@ -174,14 +177,17 @@ public class TilesController : MonoBehaviour
 
         if (_lastExcavatedTile != null)
         {
-            _lastExcavatedTile.ExcavateTile();
+            if (!_lastExcavatedTile.IsExcavated)
+            {
 
+                _lastExcavatedTile.ExcavateTile();
 
-            GetTileHandlerAtPosition(row - 1, col)?.ShowType();
-            GetTileHandlerAtPosition(row + 1, col)?.ShowType();
-            GetTileHandlerAtPosition(row, col + 1)?.ShowType();
-            GetTileHandlerAtPosition(row, col - 1)?.ShowType();
-            ValuesChanged?.Invoke();
+                GetTileHandlerAtPosition(row - 1, col)?.ShowType();
+                GetTileHandlerAtPosition(row + 1, col)?.ShowType();
+                GetTileHandlerAtPosition(row, col + 1)?.ShowType();
+                GetTileHandlerAtPosition(row, col - 1)?.ShowType();
+                ValuesChanged?.Invoke();
+            }
         }
         else
         {
@@ -198,7 +204,7 @@ public class TilesController : MonoBehaviour
                 return tile;
             }
         }
-        Debug.LogWarning("no tile handler found at position");
+        //Debug.LogWarning("no tile handler found at position");
         return null;
     }
 }

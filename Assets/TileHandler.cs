@@ -44,8 +44,11 @@ public class TileHandler : MonoBehaviour
     public ResourceType Resource => _resource;
 
     [SerializeField] bool _isTypeRevealed;
+    public bool IsTypeRevealed => _isTypeRevealed;
     [SerializeField] bool _isValueRevealed;
+    public bool IsValueRevealed => _isValueRevealed;
     [SerializeField] bool _isExcavated;
+    public bool IsExcavated => _isExcavated;
 
     private void Awake()
     {
@@ -103,25 +106,25 @@ public class TileHandler : MonoBehaviour
         {
             int rand = UnityEngine.Random.Range(0, _emptySprites.Length);
             _srBody.sprite = _emptySprites[rand];
-            _srBody.sortingOrder = 0;
+            //_srBody.sortingOrder = 0;
         }
         else if ((_tilevalue > 0 && _tilevalue <= 3))
         {
             int rand = UnityEngine.Random.Range(0, _sandSprites.Length);
             _srBody.sprite = _sandSprites[rand];
-            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
+            //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 3 && _tilevalue <= 6))
         {
             int rand = UnityEngine.Random.Range(0, _dirtSprites.Length);
             _srBody.sprite = _dirtSprites[rand];
-            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
+            //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else if ((_tilevalue > 6 && _tilevalue <= 9))
         {
             int rand = UnityEngine.Random.Range(0, _rockSprites.Length);
             _srBody.sprite = _rockSprites[rand];
-            _srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
+            //_srBody.sortingOrder = -1 * UnityEngine.Random.Range(0, int.MaxValue);
         }
         else
         {

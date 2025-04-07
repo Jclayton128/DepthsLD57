@@ -8,17 +8,25 @@ public class TotalizerDriver : MonoBehaviour
 {
 
     //refs
+    int _currentValue;
     [SerializeField] TextMeshProUGUI _valueTMPGUI = null;
     [SerializeField] TextMeshPro _valueTMP = null;
 
-    public void SetValue(int value)
+    public void SetValue(int newValue)
     {
-        _valueTMP.text = value.ToString();
-        //JUICE TODO show the value shaking or crumbling if very close to the losing threshold
-        if (value >= TilesController.Instance.CollapseThreshold)
+
+        _valueTMP.text = newValue.ToString();
+
+        if ( newValue < TilesController.Instance.CollapseThreshold)
         {
-            _valueTMP.color = Color.white;
+            _valueTMP.color = Color.red;
+            if (newValue < _currentValue)
+            {
+                CameraController.Instance.ShakeCamera(newValue/9f);
+            }
         }
-        else _valueTMP.color = Color.red;
+        else _valueTMP.color = Color.white;
+
+        _currentValue = newValue;
     }
 }
