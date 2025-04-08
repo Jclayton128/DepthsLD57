@@ -6,7 +6,7 @@ using System;
 
 public class TileHandler : MonoBehaviour
 {
-    public enum ResourceType { None, Energy, Emerald, Framing, Count}
+    public enum ResourceType { None, Energy, Emerald, Framing, Key, Chest, Count}
     public enum TileTypes { Empty, Sand, Dirt, Rock}
 
     //refs
@@ -37,6 +37,8 @@ public class TileHandler : MonoBehaviour
     [SerializeField] Sprite _energySprite = null;
     [SerializeField] Sprite _emeraldSprite = null;
     [SerializeField] Sprite _framingSprite = null;
+    [SerializeField] Sprite _keySprite = null;
+    [SerializeField] Sprite _chestSprite = null;
 
     //state
     int _row;
@@ -106,6 +108,12 @@ public class TileHandler : MonoBehaviour
                 break;
             case ResourceType.Framing:
                 _srResource.sprite = _framingSprite;
+                break;
+            case ResourceType.Key:
+                _srResource.sprite = _keySprite;
+                break;
+            case ResourceType.Chest:
+                _srResource.sprite = _chestSprite;
                 break;
 
         }
@@ -216,14 +224,11 @@ public class TileHandler : MonoBehaviour
                     break;
             }
         }
-
-
-        _isExcavated = true;
-
-        if (_resource != ResourceType.None)
-        {
-            ExtractResource();
-        }
+        ExtractResource();
+        //if (_resource != ResourceType.None)
+        //{
+            
+        //}
             
 
         GameController.Instance.SpendEnergy(_tilevalue);
@@ -243,26 +248,63 @@ public class TileHandler : MonoBehaviour
         switch (_resource)
         {
             case ResourceType.None:
+                _isExcavated = true;
                 break;
 
             case ResourceType.Energy:
                 GameController.Instance.GainEnergy(_tilevalue * 5);
                 AudioController.Instance.PlaySound_EnergyGain();
+                _resource = ResourceType.None;
+                SetResourceSprite();
+                _isExcavated = true;
                 break;
 
             case ResourceType.Emerald:
                 GameController.Instance.GainEmerald(_tilevalue * 1);
                 AudioController.Instance.PlaySound_EmeraldGain();
+                _resource = ResourceType.None;
+                SetResourceSprite();
+                _isExcavated = true;
                 break;
 
             case ResourceType.Framing:
                 GameController.Instance.GainFraming(_tilevalue * 1);
                 AudioController.Instance.PlaySound_FramingGain();
+                _resource = ResourceType.None;
+                SetResourceSprite();
+                _isExcavated = true;
+                break;
+
+
+            case ResourceType.Key:
+                GameController.Instance.GainKey();
+                AudioController.Instance.PlaySound_Key();
+                _resource = ResourceType.None;
+                SetResourceSprite();
+                _isExcavated = true;
+                break;
+
+
+            case ResourceType.Chest:
+                if (GameController.Instance.Keys > 0)
+                {
+                    GameController.Instance.SpendKey();
+                    GameController.Instance.GainEmerald(20);
+                    AudioController.Instance.PlaySound_Chest();
+                    _resource = ResourceType.None;
+                    SetResourceSprite();
+                    _isExcavated = true;
+                }
+                else
+                {
+                    //TODO play locked sound.
+                    AudioController.Instance.PlaySound_Locked();
+                }
+
                 break;
         }
         StopClearEmittingParticles();
-        _resource = ResourceType.None;
-        SetResourceSprite();
+
     }
 
     #endregion

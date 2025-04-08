@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TilesController : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class TilesController : MonoBehaviour
     //settings
     [SerializeField] List<TileHandler> _tiles = null;
     [SerializeField] int _mapSize = 8;
-    [SerializeField] int _minValue = 1;
+    [SerializeField] int _minValue = 0;
     [SerializeField] int _maxValue = 9;
     [SerializeField] int _collapseThreshold_base = 10;
+    [SerializeField] TextMeshPro _collapseThresholdTMP = null;
 
     //state
+    public int CollapseThresholdBase => _collapseThreshold_base;
     public int CollapseThreshold => _collapseThreshold_base + _maxValue;
     TileHandler _lastExcavatedTile;
 
@@ -33,24 +36,56 @@ public class TilesController : MonoBehaviour
         }
     }
 
+    public void IncrementCollapseThreshold()
+    {
+        _collapseThreshold_base++;
+        _collapseThresholdTMP.text = _collapseThreshold_base.ToString();
+    }
 
+    public void ResetCollapseThreshold()
+    {
+        _collapseThreshold_base = 10;
+        _collapseThresholdTMP.text = _collapseThreshold_base.ToString();
+    }
 
     [ContextMenu("Generate New Tile Values")]
 
     public void PushNewRandomTileValues()
     {
+        int speckeyrow = UnityEngine.Random.Range(4, _mapSize-1);
+        int speckeycol = UnityEngine.Random.Range(0, _mapSize + 1);
+        int specchestrow = UnityEngine.Random.Range(0, 4);
+        int specchestcol = UnityEngine.Random.Range(0, _mapSize + 1);
+
         foreach (var tile in _tiles)
         {
-            //TODO a better way to assign values?
-            int rand = UnityEngine.Random.Range(_minValue, _maxValue + 1);
-
             TileHandler.ResourceType resource = TileHandler.ResourceType.None;
-            int resrand = UnityEngine.Random.Range(0, 11);
-            if ((resrand > 5 && resrand <= 7)) resource = TileHandler.ResourceType.Energy;
-            if ((resrand > 7 && resrand <= 9)) resource = TileHandler.ResourceType.Framing;
-            if ((resrand > 9 && resrand <= 10)) resource = TileHandler.ResourceType.Emerald;
+            int value;
+            if (tile.Col == speckeycol && tile.Row == speckeyrow)
+            {
+                value = 0;
+                resource = TileHandler.ResourceType.Key;
+                //Debug.Log($"key at {tile.Col}, {tile.Row}");
+            }
 
-            tile.SetUpTileValue(rand, resource);
+            else if (tile.Col == specchestcol && tile.Row == specchestrow)
+            {
+                value = 0;
+                resource = TileHandler.ResourceType.Chest;
+                //Debug.Log($"chest at {tile.Col}, {tile.Row}");
+            }
+
+            else
+            {
+                value = UnityEngine.Random.Range(_minValue, _maxValue + 1);
+                int resrand = UnityEngine.Random.Range(0, 11);
+                if ((resrand > 5 && resrand <= 7)) resource = TileHandler.ResourceType.Energy;
+                if ((resrand > 7 && resrand <= 9)) resource = TileHandler.ResourceType.Framing;
+                if ((resrand > 9 && resrand <= 10)) resource = TileHandler.ResourceType.Emerald;
+
+            }
+
+            tile.SetUpTileValue(value, resource);
         }
 
         foreach (var arrow in _arrows)
@@ -100,7 +135,6 @@ public class TilesController : MonoBehaviour
             int framingCost = Mathf.Abs(_lastExcavatedTile.TileValue) * 2;
             if (GameController.Instance.Framing >= framingCost)
             {
-                Debug.Log($"framing! ");
                 GameController.Instance.SpendFraming(framingCost);
                 _lastExcavatedTile.ShowFrame();
                 ValuesChanged?.Invoke();
@@ -108,8 +142,8 @@ public class TilesController : MonoBehaviour
             }
             else
             {
+                Debug.Log($"Lost because cost was {runningValue} and threshold was {_collapseThreshold_base}");
                 CameraController.Instance.ShakeCamera(2);
-                Debug.Log("Collapse!");
                 GameController.Instance.ExecuteLoss(true);
 
             }
@@ -144,7 +178,6 @@ public class TilesController : MonoBehaviour
             int framingCost = Mathf.Abs(_lastExcavatedTile.TileValue) * 2;
             if (GameController.Instance.Framing >= framingCost)
             {
-                Debug.Log($"framing! ");
                 GameController.Instance.SpendFraming(framingCost);
                 _lastExcavatedTile.ShowFrame();
                 ValuesChanged?.Invoke();
@@ -152,8 +185,8 @@ public class TilesController : MonoBehaviour
             }
             else
             {
+                Debug.Log($"Lost because cost was {runningValue} and threshold was {_collapseThreshold_base}");
                 CameraController.Instance.ShakeCamera(2);
-                Debug.Log("Collapse!");
                 GameController.Instance.ExecuteLoss(true);
                 //TODO trigger loss
 

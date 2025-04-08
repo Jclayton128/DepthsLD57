@@ -27,6 +27,10 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip[] _emeraldGain = null;
     [SerializeField] AudioClip[] _framingGain = null;
 
+    [SerializeField] AudioClip _chest = null;
+    [SerializeField] AudioClip _key = null;
+    [SerializeField] AudioClip _locked = null;
+
 
     private void Awake()
     {
@@ -121,5 +125,20 @@ public class AudioController : MonoBehaviour
     {
         int rand = UnityEngine.Random.Range(0, _framingGain.Length);
         _auso_FX.PlayOneShot(_framingGain[rand]);
+    }
+
+    public void PlaySound_Key()
+    {
+        _auso_FX.PlayOneShot(_key);
+    }
+
+    public void PlaySound_Locked()
+    {
+        _auso_FX.PlayOneShot(_locked);
+    }
+
+    public void PlaySound_Chest()
+    {
+        _auso_FX.PlayOneShot(_chest);
     }
 }

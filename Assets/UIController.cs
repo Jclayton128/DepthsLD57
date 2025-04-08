@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [SerializeField] Febucci.UI.TextAnimator _emeraldTMP = null;
     [SerializeField] Febucci.UI.TextAnimator _energyTMP = null;
     [SerializeField] Febucci.UI.TextAnimator _framingTMP = null;
+    [SerializeField] Febucci.UI.TextAnimator _keysTMP = null;
 
     Color _startingColor;
 
@@ -41,6 +42,9 @@ public class UIController : MonoBehaviour
         GameController.Instance.FramingIncreased += HandleFramingDecreased;
         GameController.Instance.FramingDecreased += HandleFramingDecreased;
 
+        GameController.Instance.KeysIncreased += HandleKeyIncreased;
+        GameController.Instance.KeysDecreased += HandleKeyDecreased;
+
         HandleEmeraldIncrease();
 
         HandleEnergyIncreased();
@@ -48,6 +52,9 @@ public class UIController : MonoBehaviour
 
         HandleEnergyDecreased(false);
         HandleFramingDecreased();
+
+        HandleKeyIncreased();
+        HandleKeyDecreased();
     }
 
     private void HandleEmeraldIncrease()
@@ -63,6 +70,16 @@ public class UIController : MonoBehaviour
     private void HandleFramingIncreased()
     {
         _framingTMP.SetText("{size}" + GameController.Instance.Framing.ToString() + "{/size}", false);
+    }
+
+    public void HandleKeyIncreased()
+    {
+        _keysTMP.SetText("{size}" + GameController.Instance.Keys.ToString() + "{/size}", false);
+    }
+
+    public void HandleKeyDecreased()
+    {
+        _keysTMP.SetText("{fade}" + GameController.Instance.Keys.ToString() + "{/fade}", false);
     }
 
     private void HandleEnergyDecreased(bool isMoreThanOne)
