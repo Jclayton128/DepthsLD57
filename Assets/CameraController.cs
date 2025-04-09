@@ -14,8 +14,10 @@ public class CameraController : MonoBehaviour
 
     //settings
     [SerializeField] float _yPos_Title = 18f;
+    [SerializeField] float _yPos_Tutorial_High = 18f;
+    [SerializeField] float _yPos_Tutorial_Low = 18f;
     [SerializeField] float _yPos_Gameplay = 4f;
-    [SerializeField] float _moveTime = 6f;
+    [SerializeField] float _moveTime_Start = 6f;
 
 
     //state
@@ -35,13 +37,25 @@ public class CameraController : MonoBehaviour
     public void MoveToTitle()
     {
         _posTween.Kill();
-        _posTween = _mainCam.transform.DOMoveY(_yPos_Title, _moveTime);
+        _posTween = _mainCam.transform.DOMoveY(_yPos_Title, _moveTime_Start);
+    }
+
+    public void MoveToTutorial_High()
+    {
+        _posTween.Kill();
+        _posTween = _mainCam.transform.DOMoveY(_yPos_Tutorial_High, _moveTime_Start);
+    }
+
+    public void MoveToTutorial_Low()
+    {
+        _posTween.Kill();
+        _posTween = _mainCam.transform.DOMoveY(_yPos_Tutorial_Low, _moveTime_Start);
     }
 
     public void MoveToGameplay()
     {
         _posTween.Kill();
-        _posTween = _mainCam.transform.DOMoveY(_yPos_Gameplay, _moveTime);
+        _posTween = _mainCam.transform.DOMoveY(_yPos_Gameplay, _moveTime_Start);
     }
 
 }

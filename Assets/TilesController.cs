@@ -52,10 +52,11 @@ public class TilesController : MonoBehaviour
 
     public void PushNewRandomTileValues()
     {
-        int speckeyrow = UnityEngine.Random.Range(4, _mapSize-1);
-        int speckeycol = UnityEngine.Random.Range(0, _mapSize + 1);
+        StopEmittingEverywhere();
+        int speckeyrow = UnityEngine.Random.Range(4, 7);
+        int speckeycol = UnityEngine.Random.Range(0, 8);
         int specchestrow = UnityEngine.Random.Range(0, 4);
-        int specchestcol = UnityEngine.Random.Range(0, _mapSize + 1);
+        int specchestcol = UnityEngine.Random.Range(0, 8);
 
         foreach (var tile in _tiles)
         {
@@ -130,8 +131,9 @@ public class TilesController : MonoBehaviour
                 StartEmittingOnRow(row);
             }
         }
-        else
+        else if (_lastExcavatedTile)
         {
+           
             int framingCost = Mathf.Abs(_lastExcavatedTile.TileValue) * 2;
             if (GameController.Instance.Framing >= framingCost)
             {

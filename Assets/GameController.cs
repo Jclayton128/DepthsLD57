@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     //state
     GameObject _player;
     public GameObject Player => _player;
+    bool _isOnTutorialHigh = false;
 
     [SerializeField] int _energy;
     [SerializeField] int _emeralds;
@@ -64,6 +65,19 @@ public class GameController : MonoBehaviour
         {
  
             GameController.Instance.StartRun();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (_isOnTutorialHigh)
+            {
+                _isOnTutorialHigh = false;
+                CameraController.Instance.MoveToTutorial_Low();
+            }
+            else
+            {
+                _isOnTutorialHigh = true;
+                CameraController.Instance.MoveToTutorial_High();
+            }
         }
     }
 
